@@ -48,14 +48,14 @@ select {
   display: inline-block;
   padding: 10px;
 }
-#wip {
+.wip {
   border:1px solid red;
   background-color: rgba(255,0,0,0.2);
   display: inline-block;
   padding: 5px;
   color: #faa
 }
-#infoBox {
+.infoBox {
   border:1px solid white;
   background-color: rgba(255,255,255,0.2);
   display: inline-block;

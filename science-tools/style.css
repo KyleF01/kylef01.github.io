@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
+  background-image: url(space.jpg);
+  background-repeat: no-repeat;
+  background-size:cover;
+  color: white;
+}
+div {
+  margin: 12px;
+}
+canvas {
+  display: block;
+}
+p {
+  display: inline;
+}
+button, input {
+  font-family: 'Ubuntu', sans-serif;
+  margin: 5px;
+}
+select {
+  font-family: 'Ubuntu', sans-serif;
+}
+#atomic {
+  border:1px solid white;
+  background-color: rgba(255,255,255,0.2);
+  display: inline-block;
+  padding: 10px;
+}
+#quickInfo {
+  font-size: 12px;
+  overflow-wrap: break-word;
+}
+#metric {
+  border:1px solid white;
+  background-color: rgba(255,255,255,0.2);
+  display: inline-block;
+  padding: 10px;
+}
+#sciNot {
+  border:1px solid white;
+  background-color: rgba(255,255,255,0.2);
+  display: inline-block;
+  padding: 10px;
+}
+#wip {
+  border:1px solid red;
+  background-color: rgba(255,0,0,0.2);
+  display: inline-block;
+  padding: 5px;
+  color: #faa
+}
+#infoBox {
+  border:1px solid white;
+  background-color: rgba(255,255,255,0.2);
+  display: inline-block;
+  padding: 5px;
+  color: white;
+}

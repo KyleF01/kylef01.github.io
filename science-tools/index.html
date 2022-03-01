@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h1>Science Tools</h1>
+        <div id="metric">
+      <h2>Metric Converter</h2>
+      <input id="metricValue" placeholder="Value"/>
+      <select name="value" id="value">
+      <option value="kilo">Kilo-</option>
+      <option value="deci">Deci-</option>
+      <option value="centi">Centi-</option>
+      <option value="milli">Milli-</option>
+      <option value=""></option>
+      </select>
+      <select name="valueName" id="valueName">
+      <option value="grams">grams</option>
+      <option value="meters">meters</option>
+      <option value="liters">liters</option>
+      <option value="kelvin">kelvin</option>
+      </select>
+      <button id="returnMetric" onclick="calculateMass()">-&gt;</button>
+      <input id="metricReturnValue" placeholder="Return Value"/>
+      <select name="returnValue" id="returnValue">
+      <option value="kilo">Kilo</option>
+      <option value="deci">Deci</option>
+      <option value="centi">Centi</option>
+      <option value="milli">Milli</option>
+      <option value=""></option>
+      </select>
+      <p id="returnValueIdentity">grams</p>
+    </div>
+    <div id="sciNot">
+      <h2>Scientific Notation Converter</h2>
+      <p>Standard Notation to Scientific Notation</p>
+      <br>
+      <input id="fromDec1" placeholder="0"/>
+      <p> = </p>
+      <input id="fromDec2" placeholder="0x10^0"/>
+      <br>
+      <p>Scientific Notation to Standard Notation</p>
+      <br>
+      <input id="fromSci1" placeholder="0x10^0"/>
+      <p> = </p>
+      <input id="fromSci2" placeholder="0"/>
+      <div id="infoBox">Due to JavaScript limitations with really small and really big numbers, the number may not be exact, or may not convert at all.</div>
+      </div>
+    <div id="atomic">
+    <h2>Average Atomic Mass Calculator</h2>
+    <p id="quickInfo">*If there are less than 4, please leave the excess inputs as 0, or don't type anything at all.</p>
+    <br>
+    <input id="iso1" placeholder="Isotope Mass 1"/>
+    <br>
+    <input id="iso2" placeholder="Isotope Mass 2"/>
+    <br>
+    <input id="iso3" placeholder="Isotope Mass 3"/>
+    <br>
+    <input id="iso4" placeholder="Isotope Mass 4"/>
+    <br>
+    <input id="per1" placeholder="Percent 1"/>
+    <br>
+    <input id="per2" placeholder="Percent 2"/>
+    <br>
+    <input id="per3" placeholder="Percent 3"/>
+    <br>
+    <input id="per4" placeholder="Percent 4"/>
+    <br>
+    <button onclick="updateValues()">Calculate Avg Mass</button>
+    <br>
+    <p id="formula"/>
+    <p id="amuCalculation"/>
+    <br>
+    <script src="sketch.js"></script>
+    </div>
+  </body>
+</html>

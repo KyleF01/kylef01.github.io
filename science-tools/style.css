@@ -64,7 +64,7 @@ select {
 }
 .warn {
   border:1px solid yellow;
-  background-color: rgba(255,0,0,0.2);
+  background-color: rgba(255,255,0,0.2);
   display: inline-block;
   padding: 5px;
   color: #ffa;

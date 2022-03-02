@@ -48,12 +48,12 @@ select {
   display: inline-block;
   padding: 10px;
 }
-.wip {
+.error {
   border:1px solid red;
   background-color: rgba(255,0,0,0.2);
   display: inline-block;
   padding: 5px;
-  color: #faa
+  color: #faa;
 }
 .infoBox {
   border:1px solid white;
@@ -61,4 +61,11 @@ select {
   display: inline-block;
   padding: 5px;
   color: white;
+}
+.warn {
+  border:1px solid yellow;
+  background-color: rgba(255,0,0,0.2);
+  display: inline-block;
+  padding: 5px;
+  color: #ffa;
 }

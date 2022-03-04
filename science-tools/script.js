@@ -81,3 +81,24 @@ function calculateSciNot() {
   }
 }
 calculateSciNot()
+
+function calculateIdealGas(pres,volume,mol,temp,calculate) {
+  if (calculate == 'temp') {
+    let tmp1 = pres*volume
+    let tmp2 = mol*0.0851
+    return(tmp1/tmp2)
+  }
+  if (calculate == 'pres') {
+    let tmp2 - mol*0.0851*temp
+    return(tmp2/volume)
+  }
+  if (calculate == 'mol') {
+    let tmp1 = pres*volume
+    let tmp2 = temp*0.0851
+    return(tmp1/tmp2)
+  }
+  if (calculate == 'volume') {
+    let tmp2 = temp*0.0851*mol
+    return(tmp2/pres)
+  }
+}

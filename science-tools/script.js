@@ -8,7 +8,22 @@ let weight3 = 34
 let weight4 = 36
 let arrayNumber = [1,2,3,4]
 let mathErrorFix = 10000000000000
+let idealDisabled = 'none'
 // If there is no 4th or 3th isotope, let all extra fields equal 0
+
+function undisableIdeal() {
+  document.querySelector('#ideal_P').disabled = false
+  document.querySelector('#ideal_V').disabled = false
+  document.querySelector('#ideal_n').disabled = false
+  document.querySelector('#ideal_T').disabled = false
+}
+
+function disableIdeal(i) {
+  idealDisabled = i
+  undisableIdeal();
+  document.querySelector(`#${i}`).disabled = true
+}
+
 function updateValues() {
   percent1 = document.querySelector("#per1").value.replace('%', '')
   percent2 = document.querySelector("#per2").value.replace('%', '')
@@ -22,8 +37,8 @@ function updateValues() {
   document.querySelector("#amuCalculation").textContent = (((percent1*weight1)+(percent2*weight2)+(percent3*weight3)+(percent4*weight4))/100)+" AMU"
 }
 
- document.querySelector("#formula").textContent = `${percent1} ( ${weight1} ) + ${percent2} ( ${weight2} ) + ${percent3} ( ${weight3} ) + ${percent4} ( ${weight4} ) / 100 = `
-  document.querySelector("#amuCalculation").textContent = (((percent1*weight1)+(percent2*weight2)+(percent3*weight3)+(percent4*weight4))/100)+" AMU"
+//  document.querySelector("#formula").textContent = `${percent1} ( ${weight1} ) + ${percent2} ( ${weight2} ) + ${percent3} ( ${weight3} ) + ${percent4} ( ${weight4} ) / 100 = `
+//   document.querySelector("#amuCalculation").textContent = (((percent1*weight1)+(percent2*weight2)+(percent3*weight3)+(percent4*weight4))/100)+" AMU"
 
 function calculateMass() {
   x = document.querySelector("#value").selectedIndex
@@ -57,11 +72,10 @@ function calculateMass() {
   document.querySelector("#metricReturnValue").value = y
   document.querySelector("#returnValueIdentity").textContent = w.options[w.selectedIndex].textContent
 }
-document.querySelector("html").addEventListener("click", calculateMass)
-document.querySelector("html").addEventListener("keyup", calculateMass)
-document.querySelector("html").addEventListener("click", calculateSciNot)
-document.querySelector("html").addEventListener("keyup", calculateSciNot)
-calculateMass()
+document.querySelector("#atomic").addEventListener("click", calculateMass)
+document.querySelector("#atomic").addEventListener("keyup", calculateMass)
+document.querySelector("#sciNot").addEventListener("click", calculateSciNot)
+document.querySelector("#sciNot").addEventListener("keyup", calculateSciNot)
 
 function calculateSciNot() {
   sci = document.querySelector("#fromSci1").value
@@ -80,25 +94,31 @@ function calculateSciNot() {
     dec2.value = `${Math.round((dec/(10**(--dec3)))*mathErrorFix)/mathErrorFix} * 10^${dec3}`
   }
 }
-calculateSciNot()
 
-function calculateIdealGas(pres,volume,mol,temp,calculate) {
-  if (calculate == 'temp') {
+function calculateIdealGas() {
+  let pres = document.querySelector("#ideal_P").value
+  let temp = document.querySelector("#ideal_T").value
+  let volume = document.querySelector("#ideal_V").value
+  let mol = document.querySelector("#ideal_n").value
+  if (idealDisabled == 'ideal_T') {
     let tmp1 = pres*volume
     let tmp2 = mol*0.0851
-    return(tmp1/tmp2)
+    document.querySelector("#idealReturn").textContent = `Temperature = ${tmp1/tmp2} K`
   }
-  if (calculate == 'pres') {
-    let tmp2 - mol*0.0851*temp
-    return(tmp2/volume)
+  if (idealDisabled == 'ideal_P') {
+    let tmp2 = mol*0.0851*temp
+    document.querySelector("#idealReturn").textContent = `Pressure = ${tmp2/volume} ATM`
   }
-  if (calculate == 'mol') {
+  if (idealDisabled == 'ideal_n') {
     let tmp1 = pres*volume
     let tmp2 = temp*0.0851
-    return(tmp1/tmp2)
+    document.querySelector("#idealReturn").textContent = `Moles = ${tmp1/tmp2} mol`
   }
-  if (calculate == 'volume') {
+  if (idealDisabled == 'ideal_V') {
     let tmp2 = temp*0.0851*mol
-    return(tmp2/pres)
+    document.querySelector("#idealReturn").textContent = `Volume = ${tmp2/pres} L`
+  }
+  if (idealDisabled == 'none') {
+    document.querySelector("#idealReturn").textContent = 'Oops! You need to select a value to find!'
   }
 }

@@ -2,12 +2,20 @@
 <html lang="en">
   <head>
     <title>Science Tools - By Kyle</title>
+    <link rel="icon" type="image/x-icon" href="logo.png">
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="utf-8" />
-    <script src="sketch.js"></script>
   </head>
   <body>
-    <h1>Science Tools</h1>
+    <div style="background-color: rgba(255,255,255,0.2); position: fixed; padding: 5px; margin: 0px; top: 0px; left: 0px; border-bottom-right-radius: 10px;">
+      <img src="logo.png" height="75" width="75"  style="display: inline-block; vertical-align: middle;"></img>
+      <h1 style="display: inline-block; vertical-align: middle;" >Science Tools</h1>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
         <div id="metric" class="infoBox">
       <h2>Metric Converter</h2>
       <input id="metricValue" placeholder="Value"/>
@@ -36,10 +44,11 @@
       <p id="returnValueIdentity">grams</p>
     </div>
     <div id="sciNot" class="infoBox">
+      <div class="warn">Due to JavaScript limitations with really small and really big numbers, the number may not be exact, or may not convert at all.</div>
       <h2>Scientific Notation Converter</h2>
       <p>Standard Notation to Scientific Notation</p>
       <br>
-      <input id="fromDec1" placeholder="0"/>
+      <input id="fromDec1" placeholder="0"></input>
       <p> = </p>
       <input id="fromDec2" placeholder="0x10^0"/>
       <br>
@@ -48,7 +57,6 @@
       <input id="fromSci1" placeholder="0x10^0"/>
       <p> = </p>
       <input id="fromSci2" placeholder="0"/>
-      <div class="warn">Due to JavaScript limitations with really small and really big numbers, the number may not be exact, or may not convert at all.</div>
       </div>
     <div id="atomic" class="infoBox">
     <h2>Average Atomic Mass Calculator</h2>
@@ -77,16 +85,35 @@
     <br>
     </div>
     <div class="infoBox">
-       <div class="warn">
+       <div class="error">
         <p>This section is a work in progress, and may be incorrect, or alltogether nonfunctioning.</p>       
       </div>
       <h2>Combined Gas Law Finder</h2>
     </div>
     <div class="infoBox">
       <div class="warn">
-        <p>This section is a work in progress, and may be incorrect, or alltogether nonfunctioning.</p>       
+        <p>This section is a work in progress, and may be incorrect, or alltogether nonfunctioning.</p>     
       </div>
       <h2>Ideal Gas Law Finder</h2>
+      <div style="display:flex; justify-content: space-around;">
+        <button onclick="disableIdeal('ideal_P')">Find Pressure</button>
+        <button onclick="disableIdeal('ideal_V')">Find Volume</button>
+        <button onclick="disableIdeal('ideal_n')">Find Moles</button>
+        <button onclick="disableIdeal('ideal_T')">Find Temperature</button>
+      </div>
+      <div style="display:flex; justify-content: space-around;">
+        <input id="ideal_P" placeholder="Pressure [P] in ATM"></input>
+        <input id="ideal_V" placeholder="Volume [V] in L"></input>
+        <p>=</p>
+        <input id="ideal_n" placeholder="Moles [n]"></input>
+        <p>R</p>
+        <input id="ideal_T" placeholder="Temperature [T] in K"></input>
+      </div>
+      <button style="font-size:25px;" onclick="calculateIdealGas()">Calculate</button>
+      <br>
+      <p id="idealReturn" style="font-size:25px;">HI</p>
     </div>
+    <footer style="padding: 10px; background-color: rgba(255,255,255,0.2); margin-top: 15px;">Science Tools By Kyle, Feedback page coming soon!</footer>
   </body>
+  <script src="script.js"></script>  
 </html>

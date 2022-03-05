@@ -23,6 +23,9 @@ button, input {
   font-family: 'Ubuntu', sans-serif;
   margin: 5px;
 }
+h2 {
+  margin-top: 5px;
+}
 select {
   font-family: 'Ubuntu', sans-serif;
 }

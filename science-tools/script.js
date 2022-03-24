@@ -122,3 +122,37 @@ function calculateIdealGas() {
     document.querySelector("#idealReturn").textContent = 'Oops! You need to select a value to find!'
   }
 }
+
+function calculateCombinedGas() {
+  let pres1 = document.querySelector("#combPresOne").value
+  let pres2 = document.querySelector("#combPresTwo").value
+  let vol1 = document.querySelector("#combVolOne").value
+  let vol2 = document.querySelector("#combVolTwo").value
+  let temp1 = document.querySelector("#combTempOne").value
+  let temp2 = document.querySelector("#combTempTwo").value
+  let returnValue;
+  let returnUnits;
+  if (calCombined[0] == 1) { // findOne
+    let cal2 = (pres2*vol2)/temp2
+  } else {
+    if (calCombined[0] == 2) { // findTwo
+      let cal1 = (pres1*vol1)/temp1
+      if (calCombined[1] == 'temp') {
+        let cal2 = pres2*vol2
+      } else {
+        if (calCombined[1] == 'pres') {
+          let cal2; // todo
+        } else {
+          if (calCombined[1] == 'vol') {
+            let cal2; //todo
+          }
+        } // Once done with these 3, add them to findOne as well
+      }
+    }
+  }
+  if (returnValue == undefined || isNaN(returnValue)) {
+    document.querySelector("#combValReturn").textContent = 'Unable to calculate, make sure that you are not including any letters, and that you selected a value to find.'
+  } else {
+    document.querySelector("#combValReturn").textContent = `${returnValue} ${returnUnits}`
+  }
+}

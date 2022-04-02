@@ -1,14 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
 html, body {
+  font-family: 'Ubuntu', sans-serif;
   background-image: url('https://kylef01.github.io/internet/pine_tree.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
   padding: 0px;
   margin: 0px;
 }
 
+p {
+  font-family: 'Ubuntu', sans-serif;
+}
+
 #header {
-  background-color: #dddc;
+  background-color: #ddda;
   padding: 5px;
   margin: 0px;
+  
 }
 
 #home {
@@ -21,6 +30,7 @@ button {
   border: 0px solid black;
   border-radius: 5px;
   background-color: #eeec;
+  margin-top: 0px;
 }
 
 footer {
@@ -36,7 +46,7 @@ footer {
 
 .section {
   width: 90%;
-  background-color: #fff5;
+  background-color: #fff8;
   margin: auto;
   margin-top: 10px;
   padding: 2px;

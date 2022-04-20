@@ -9,6 +9,7 @@ let weight4 = 36
 let arrayNumber = [1,2,3,4]
 let mathErrorFix = 10000000000000
 let idealDisabled = 'none'
+let combDisabled = ''
 // If there is no 4th or 3th isotope, let all extra fields equal 0
 
 function undisableIdeal() {
@@ -124,12 +125,12 @@ function calculateIdealGas() {
 }
 
 function calculateCombinedGas() {
-  let pres1 = document.querySelector("#combPresOne").value
-  let pres2 = document.querySelector("#combPresTwo").value
-  let vol1 = document.querySelector("#combVolOne").value
-  let vol2 = document.querySelector("#combVolTwo").value
-  let temp1 = document.querySelector("#combTempOne").value
-  let temp2 = document.querySelector("#combTempTwo").value
+  let pres1 = document.querySelector("#combP1").value
+  let pres2 = document.querySelector("#combP2").value
+  let vol1 = document.querySelector("#combV1").value
+  let vol2 = document.querySelector("#combV2").value
+  let temp1 = document.querySelector("#combT1").value
+  let temp2 = document.querySelector("#combT2").value
   let returnValue;
   let returnUnits;
   if (calCombined[0] == 1) { // findOne
@@ -155,4 +156,12 @@ function calculateCombinedGas() {
   } else {
     document.querySelector("#combValReturn").textContent = `${returnValue} ${returnUnits}`
   }
+}
+
+function disableCombined(x) {
+	document.querySelectorAll('.combined').forEach(i => {
+  	i.disabled = false;
+  })
+  combDisabled = x.id.split('B')[0]
+	document.getElementById(combDisabled).disabled = true;
 }

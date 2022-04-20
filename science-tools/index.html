@@ -86,35 +86,30 @@
     </div>
     <div class="infoBox">
        <div class="error">
-        <p>This section is a work in progress, and may be incorrect, or alltogether nonfunctioning.</p>       
-      </div>
-      <div class="error">
-        <p>
-          This section looks complete but is still nonfunctional, sorry for the inconvenience.
-        </p>
+        <p>This section is a work in progress, and may be incorrect, or alltogether nonfunctioning.</p>
       </div>
       <h2>Combined Gas Law Finder</h2>
       <div id="combFlexButtons" style="display: flex; justify-content: space-evenly;">
-        <button>Find Pressure 1</button>
-        <button>Find Volume 1</button>
-        <button>Find Pressure 2</button>
-        <button>Find Volume 2</button>
+        <button onclick="disableCombined(this)" id="combP1B">Find Pressure 1</button>
+        <button onclick="disableCombined(this)" id="combV1B">Find Volume 1</button>
+        <button onclick="disableCombined(this)" id="combP2B">Find Pressure 2</button>
+        <button onclick="disableCombined(this)" id="combV2B">Find Volume 2</button>
       </div>
       <div id="combFlex" style="display: flex; justify-content: space-evenly;">
-      <input id="combP1" placeholder="Pressure 1"></input>
-      <input id="combV1" placeholder="Volume 1"></input>
+      <input class="padding combined" id="combP1" placeholder="Pressure 1"></input>
+      <input class="padding combined" id="combV1" placeholder="Volume 1"></input>
       =
-      <input id="combP2" placeholder="Pressure 2"></input>
-      <input id="combV2" placeholder="Volume 2"></input>
+      <input class="padding combined" id="combP2" placeholder="Pressure 2"></input>
+      <input class="padding combined" id="combV2" placeholder="Volume 2"></input>
       </div>
       <hr>
       <div style="display: flex; justify-content: space-evenly;">
-        <input id="combT1" placeholder="Temperature 1"></input>
-        <input id="combT2" placeholder="Temperature 2"></input>
+        <input class="padding combined" id="combT1" placeholder="Temperature 1"></input>
+        <input class="padding combined" id="combT2" placeholder="Temperature 2"></input>
       </div>
       <div style="display: flex; justify-content: space-evenly;">
-        <button>Find Temperature 1</button>
-        <button>Find Temperature 2</button>
+        <button onclick="disableCombined(this)" id="combT1B">Find Temperature 1</button>
+        <button onclick="disableCombined(this)" id="combT2B">Find Temperature 2</button>
       </div>
     </div>
     <div class="infoBox">

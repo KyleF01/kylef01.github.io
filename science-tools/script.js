@@ -10,6 +10,7 @@ let arrayNumber = [1,2,3,4]
 let mathErrorFix = 10000000000000
 let idealDisabled = 'none'
 let combDisabled = ''
+let calCombined = []
 // If there is no 4th or 3th isotope, let all extra fields equal 0
 
 function undisableIdeal() {
@@ -133,25 +134,68 @@ function calculateCombinedGas() {
   let temp2 = document.querySelector("#combT2").value
   let returnValue;
   let returnUnits;
+if (combDisabled.includes("1")) {
+    calCombined[0] = 1
+  } else {
+    if (combDisabled.includes("2")) {
+      calCombined[0] = 2
+    } else {
+      calCombined[0] = 0
+    }
+  }
+  if (combDisabled.includes("T")) {
+    calCombined[1] = 'temp'
+    }
+  if (combDisabled.includes("P")) {
+    calCombined[1] = 'pres'
+    }
+  if (combDisabled.includes("V")) {
+    calCombined[1] = 'vol'
+    }
   if (calCombined[0] == 1) { // findOne
     let cal2 = (pres2*vol2)/temp2
+      if (calCombined[1] == 'temp') {
+        let cal1 = pres1*vol1
+        returnValue = cal2/cal1
+        returnUnits = 'Temperature'
+      } else {
+        if (calCombined[1] == 'pres') {
+          cal2*=temp1
+          returnValue = cal2/vol1
+          returnUnits = 'Pressure'
+        } else {
+          if (calCombined[1] == 'vol') {
+            cal2*=temp1
+            returnValue = cal2/pres1
+            returnUnits = 'Volume'
+          }
+        } // Once done with these 3, add them to findOne as well
+      }
   } else {
     if (calCombined[0] == 2) { // findTwo
       let cal1 = (pres1*vol1)/temp1
       if (calCombined[1] == 'temp') {
         let cal2 = pres2*vol2
+        returnValue = cal1/cal2
+        returnUnits = 'Temperature'
       } else {
         if (calCombined[1] == 'pres') {
-          let cal2; // todo
+          cal1*=temp2
+          returnValue = cal1/vol2
+          returnUnits = 'Pressure'
         } else {
           if (calCombined[1] == 'vol') {
-            let cal2; //todo
+            cal1*=temp2
+            returnValue = cal1/pres2
+            returnUnits = 'Volume'
           }
         } // Once done with these 3, add them to findOne as well
       }
     }
   }
+  console.log(returnValue)
   if (returnValue == undefined || isNaN(returnValue)) {
+  	//document.querySelector("#combValReturn").textContent = 'This calculator is still in progress, and is not working... Sorry!'
     document.querySelector("#combValReturn").textContent = 'Unable to calculate, make sure that you are not including any letters, and that you selected a value to find.'
   } else {
     document.querySelector("#combValReturn").textContent = `${returnValue} ${returnUnits}`

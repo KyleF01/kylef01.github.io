@@ -85,8 +85,8 @@
     <br>
     </div>
     <div class="infoBox">
-       <div class="error">
-        <p>This section is a work in progress, and may be incorrect, or alltogether nonfunctioning.</p>
+       <div class="warn">
+        <p>This section is a work in progress, and may be incorrect, or alltogether nonfunctioning. In addition, the temperature value is known to return an incorrect value at the moment.</p>
       </div>
       <h2>Combined Gas Law Finder</h2>
       <div id="combFlexButtons" style="display: flex; justify-content: space-evenly;">
@@ -111,11 +111,11 @@
         <button onclick="disableCombined(this)" id="combT1B">Find Temperature 1</button>
         <button onclick="disableCombined(this)" id="combT2B">Find Temperature 2</button>
       </div>
+      <button style="font-size:25px;" onclick="calculateCombinedGas()">Calculate</button>
+      <br>
+      <p id="combValReturn"></p>
     </div>
     <div class="infoBox">
-      <div class="warn">
-        <p>This section is a work in progress, and may be incorrect, or alltogether nonfunctioning.</p>     
-      </div>
       <h2>Ideal Gas Law Finder</h2>
       <div style="display:flex; justify-content: space-around;">
         <button onclick="disableIdeal('ideal_P')">Find Pressure</button>

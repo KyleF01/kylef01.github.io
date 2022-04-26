@@ -156,7 +156,7 @@ if (combDisabled.includes("1")) {
     let cal2 = (pres2*vol2)/temp2
       if (calCombined[1] == 'temp') {
         let cal1 = pres1*vol1
-        returnValue = cal2/cal1
+        returnValue = cal2/(cal2/cal1)
         returnUnits = 'Temperature'
       } else {
         if (calCombined[1] == 'pres') {
@@ -176,7 +176,7 @@ if (combDisabled.includes("1")) {
       let cal1 = (pres1*vol1)/temp1
       if (calCombined[1] == 'temp') {
         let cal2 = pres2*vol2
-        returnValue = cal1/cal2
+        returnValue = cal1/(cal1/cal2)
         returnUnits = 'Temperature'
       } else {
         if (calCombined[1] == 'pres') {

@@ -1,17 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
 html, body {
-  background-image: url('background.jpg');
+  background-color: #222;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
   width: 100%;
+  margin: 0px;
+  font-family: 'Ubuntu', sans-serif;
+  overflow: hidden;
 }
+
 div {
-  background-color: rgba(255,255,255,0.2);
-  padding: 50px;
-  border: 5px solid white;
-  border-radius: 100px;
+  background-color: rgba(0,0,0,0.2);
+  padding: 20px;
   color: white;
 }
+
+p {
+  margin: 0px;
+}
+
 a {
   color: magenta;
+}
+
+#weatherDiv {
+  background-color: #222;
+}
+
+#timeDiv {
+  background-color: #222;
+}
+
+#date {
+  text-align: center;
+}
+
+#time {
+  text-align: center;
+  font-size: 36px;
+}
+
+#day {
+  text-align: center;
+}
+
+#temp {
+  display: flex;
+  flex-wrap: wrap;
+  border: 0px;
+  border-radius: 5px;
+  justify-content: center;
+  padding: 5px;
+  background-color: transparent;
+}
+
+#wicon {
+  font-size: 60px;
+  text-align: center;
+  width: 100%;
+}
+
+.break {
+  flex-basis: 100%;
+  height: 0;
+  padding: 0;
+  background-color: transparent;
+  border: 0px;
+}
+
+#loc {
+  font-size: 24px;
+  text-align: center;
+}
+
+#tempMain {
+  font-size: 24px;
+}
+
+.holder {
+  padding: 5px;
+}
+
+#weatherBorder {
+  background-image: linear-gradient(darkblue, darkorchid);
+  padding: 5px;
+  width: 0%;
+}
+
+#newtab {
+  position: absolute;
+  color: white;
+  top: 10px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  font-size: 60px;
+}
+
+#credit {
+  color: white;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
 }
